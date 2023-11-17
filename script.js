@@ -4,7 +4,7 @@ function searchPlayer() {
 
   var xhr = new XMLHttpRequest();
   xhr.open("GET", apiUrl, true);
-  xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIyOTcyODQ4MC02NzJjLTAxM2MtYzM4YS0xYTljOTg2NWFhMWIiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNzAwMTkzNzk3LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Ii1mODI5ZmQ2Ni04ZGE1LTQ3ZWMtODU0YS01MjUwZTFhZDA4NGMifQ.0iUaoOI6xc_oIc2IVbYp3JLbkrhWgBr8JbmND6J4e3o");
+  xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIyOTcyODQ4MC02NzJjLTAxM2MtYzM4YS0xYTljOTg2NWFhMWIiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNzAwMTkzNzk3LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Ii1mODI5ZmQ2Ni04ZGE1LTQ3ZWMtODU0YS01MjUwZTFhZDA4NGMifQ.0iUaoOI6xc_oIc2IVbYp3JLbkrhWgBr8JbmND6J4e3o"); // Замените YOUR_ACCESS_TOKEN на ваш токен
   xhr.setRequestHeader("Accept", "application/vnd.api+json");
 
   xhr.onreadystatechange = function () {
@@ -26,14 +26,19 @@ function displayPlayerData(playerData) {
   playerInfo.innerHTML = ''; // Очистить предыдущий результат (если есть)
 
   if (playerData.data && playerData.data.length > 0) {
-    var playerName = playerData.data[0].attributes.name;
-    var playerID = playerData.data[0].id;
-    var playerRegion = playerData.data[0].attributes.shardId;
+    var playerHTML = "<h2>Информация об игроке:</h2>";
 
-    var playerHTML = "<h2>Информация об игроке:</h2>" +
-                     "<p>Никнейм: " + playerName + "</p>" +
-                     "<p>ID игрока: " + playerID + "</p>" +
-                     "<p>Регион: " + playerRegion + "</p>";
+    playerData.data.forEach(function(player) {
+      var playerName = player.attributes.name;
+      var playerID = player.id;
+      var playerRegion = player.attributes.shardId;
+
+      var playerDetailsHTML = "<p>Никнейм: " + playerName + "</p>" +
+                              "<p>ID игрока: " + playerID + "</p>" +
+                              "<p>Регион: " + playerRegion + "</p>";
+
+      playerHTML += "<div class='playerDetails'>" + playerDetailsHTML + "</div>";
+    });
 
     playerInfo.innerHTML = playerHTML;
   } else {
