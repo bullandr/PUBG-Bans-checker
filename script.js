@@ -1,3 +1,9 @@
+document.getElementById('playerName').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    searchPlayer();
+  }
+});
+
 function searchPlayer() {
   var playerName = document.getElementById('playerName').value;
   var apiUrl = "https://api.pubg.com/shards/steam/players?filter[playerNames]=" + playerName;
