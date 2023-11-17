@@ -11,10 +11,10 @@ body {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
   color: #333;
 }
 
@@ -56,23 +56,17 @@ button:hover {
   color: #333;
 }
 
-.playerDetails {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.thanks-section {
+footer {
+  margin-top: 20px;
   text-align: center;
-  background-color: #f44336;
-  color: #fff;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 20px;
+  font-size: 14px;
 }
 
-.thanks-section a {
-  color: #fff;
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+footer a:hover {
   text-decoration: underline;
 }
