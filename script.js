@@ -44,7 +44,13 @@ function displayPlayerData(playerData) {
 
     playerInfo.innerHTML = playerHTML;
   } else {
-    displayError("No Players Found Matching Criteria");
+    var errorMessage = "No Players Found Matching Criteria";
+
+    if (playerData.errors && playerData.errors.length > 0 && playerData.errors[0].title === "Not Found") {
+      errorMessage = playerData.errors[0].detail;
+    }
+
+    displayError(errorMessage);
   }
 }
 
