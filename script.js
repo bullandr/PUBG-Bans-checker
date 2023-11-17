@@ -4,7 +4,7 @@ function searchPlayer() {
 
   var xhr = new XMLHttpRequest();
   xhr.open("GET", apiUrl, true);
-  xhr.setRequestHeader("Authorization", "Bearer YOUR_ACCESS_TOKEN"); // Замените YOUR_ACCESS_TOKEN на ваш токен
+  xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIyOTcyODQ4MC02NzJjLTAxM2MtYzM4YS0xYTljOTg2NWFhMWIiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNzAwMTkzNzk3LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Ii1mODI5ZmQ2Ni04ZGE1LTQ3ZWMtODU0YS01MjUwZTFhZDA4NGMifQ.0iUaoOI6xc_oIc2IVbYp3JLbkrhWgBr8JbmND6J4e3o");
   xhr.setRequestHeader("Accept", "application/vnd.api+json");
 
   xhr.onreadystatechange = function () {
