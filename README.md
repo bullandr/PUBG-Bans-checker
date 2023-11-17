@@ -25,8 +25,4 @@ This project is built using HTML, CSS, and JavaScript.
 
 Don't forget to replace YOUR_ACCESS_TOKEN with your actual access token for the PUBG API in the `script.js` file.
 
-## Author
-
-[Your Name or Username](link to your profile or contact information)
-
 License: MIT (or specify the chosen license)
