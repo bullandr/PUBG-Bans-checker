@@ -62,3 +62,17 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
+.thanks-section {
+  text-align: center;
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.thanks-section a {
+  color: #fff;
+  text-decoration: underline;
+}
